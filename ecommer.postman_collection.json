@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "704fadef-2df3-456d-8615-9bda586f8eb0",
+		"name": "ecommer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39551987"
+	},
+	"item": [
+		{
+			"name": "/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n\"email\":\"deepak@gmail.com\",\r\n  \"password\":\"12345678\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"deepak\",\r\n\"email\":\"deepak@gmail.com\",\r\n  \"password\":\"12345678\",\r\n  \"address\":\"indore\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Add product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"phone\",\r\n  \"description\":\"8gh RAM 128gb ROM\",\r\n  \"price\":\"55000\",\r\n  \"category\":\"electric\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addproduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addproduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"iphone 16 \",\r\n\"price\":\"850000\",\r\n\"description\":\"128gb memory\",\r\n\"category\":\"phone\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateproduct/672f1ff975c40d02a1b23735",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateproduct",
+						"672f1ff975c40d02a1b23735"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleteproduct/672f1f9775c40d02a1b23733",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteproduct",
+						"672f1f9775c40d02a1b23733"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add product to cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n   \"productId\":\"672f1ff975c40d02a1b23735\", \"quantity\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cart/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n   \"productId\":\"672f1ff975c40d02a1b23735\", \"quantity\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cart/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product from cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"productId\":\"672f1ff975c40d02a1b23735\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cart/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "placeorder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " { \"shippingDetail\" :\"indore\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/placeorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"placeorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getallorders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMDEzNiwiZXhwIjoxNzMxMjE2NTM2fQ.e5ogCc6ehxQQi21wPjD8Vpy0EzuDd1s9q8boEwvU02k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/getallorders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getallorders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Get Orders by Customer ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlZXBha0BnbWFpbC5jb20iLCJpZCI6IjY3MmQxMTRlY2VkODE4NDE1NWU2MDg0YSIsImlhdCI6MTczMTEzMzY1MSwiZXhwIjoxNzMxMjIwMDUxfQ.P00Gwr1-K6CKNZp2R5qhS0xtEyHC0L8Ltf1OBqsYb84",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/orders/customer/672d114eced8184155e6084a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"customer",
+						"672d114eced8184155e6084a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
